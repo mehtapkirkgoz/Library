@@ -5,7 +5,7 @@
 }
 
 body{
-    background-color: #aaaaaa;
+    background-color: #aaaaaa;;
 }
 
 header{
@@ -32,5 +32,27 @@ header img{
 
 .scrolled-header{
     transform: scale(1, 0.7);
+}
+
+.page-container{
+    margin: 30px 40px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    width: 95%;
+    height: 800px;
+    border: 2px solid #373737;
+}
+
+.sidebar{
+    width: 20%;
+    height: 100%;
+    background-color: rgb(106, 106, 106);
+}
+
+main{
+    width: 80%;
+    height: 100%;
 }
 
