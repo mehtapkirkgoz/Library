@@ -1,4 +1,11 @@
 const header = document.querySelector('.sliding-header');
+const year = document.querySelector('.year');
+
+year.textContent = new Date().getFullYear();
+let isMouseDown = false;
+let currentMode = "paint";
+let gridSize = Number(slider.value);
+let gridVisible = true;
 
 
 window.addEventListener("scroll", () => {
