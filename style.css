@@ -5,7 +5,7 @@
 }
 
 body{
-    background-color: #aaaaaa;
+    background-color: #aaaaaa;;
 }
 
 header{
@@ -49,6 +49,24 @@ header img{
     width: 20%;
     height: 100%;
     background-color: rgb(106, 106, 106);
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px;
+}
+
+.side-buttons{
+    width: 90%;
+    height: 50px;
+    background-color: antiquewhite;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.side-buttons:hover{
+    background-color: rgb(213, 201, 188);
 }
 
 main{
