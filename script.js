@@ -18,7 +18,7 @@ const books = [
         name: "Suç ve Ceza",
         author: "Dostoyevski",
         pageNumber: 300,
-        bookImage: "suc-ve-ceza.jpg"
+        bookImage: 'images/suc-ve-ceza.jpg'
     }
 ]
 
@@ -58,6 +58,7 @@ function addBooksIngredientsToMain(book){
 
     const bookImage = document.createElement("img");
     bookImage.classList.add('book-image-section');
+    bookImage.setAttribute('src' , book.bookImage);
 
     section.append(bookName, bookAuthor, bookPageNumber, bookImage);
 }
