@@ -48,7 +48,7 @@ header img{
 .sidebar{
     width: 20%;
     height: 100%;
-    background-color: rgb(106, 106, 106);
+    background-color: #6a6a6a;
     display: flex;
     justify-content: center;
     gap: 8px;
@@ -58,7 +58,7 @@ header img{
 .side-buttons{
     width: 90%;
     height: 50px;
-    background-color: antiquewhite;
+    background-color: #faebd7;
     border-radius: 5px;
     border: none;
     cursor: pointer;
@@ -66,12 +66,41 @@ header img{
 }
 
 .side-buttons:hover{
-    background-color: rgb(213, 201, 188);
+    background-color: #d5c9bc;
 }
 
 main{
     width: 80%;
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section{
+    width: 80%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.book-name-section{
+    font-size: 42px;
+}
+
+.book-author-section{
+    font-size: 36px;
+}
+
+.book-page-size-section{
+    font-size: 30px;
+}
+
+.book-image-section{
+    width: 30px;
+    height: 30px;
+    border-radius: 3px;
 }
 
 footer{
