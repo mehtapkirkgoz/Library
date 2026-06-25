@@ -12,15 +12,7 @@ window.addEventListener("scroll", () => {
 })
 
 
-const books = [
-    {
-        id: 1,
-        name: "Suç ve Ceza",
-        author: "Dostoyevski",
-        pageNumber: 688,
-        bookImage: 'images/suc-ve-ceza.jpg'
-    }
-]
+const books = [];
 
 function addBook(id, name, author, pageNumber, bookImage){
     books.push({
@@ -34,6 +26,7 @@ function addBook(id, name, author, pageNumber, bookImage){
     createButtonsToSideBar();
 }
 
+addBook(1, "Suç ve Ceza", "Dostoyevski", 688, "images/suc-ve-ceza.jpg");
 addBook(2, "Sefiller", "Victor Hugo", 1232, "images/sefiller.jpg");
 addBook(3, "1984", "George Orwell", 328, "images/1984.jpg");
 
