@@ -29,6 +29,13 @@ function addBook(id, name, author, pageNumber, bookImage){
 addBook(1, "Suç ve Ceza", "Dostoyevski", 688, "images/suc-ve-ceza.jpg");
 addBook(2, "Sefiller", "Victor Hugo", 1232, "images/sefiller.jpg");
 addBook(3, "1984", "George Orwell", 328, "images/1984.jpg");
+addBook(4, "Dönüşüm", "Franz Kafka", 104, "images/dönüşüm.jpg");
+addBook(5, "Anna Karenina", "Lev Toystoy", 953, "images/anna-karenina.jpg");
+addBook(6, "Madame Bovary", "Gustave Flaubert", 376, "images/madame-bovary.jpg");
+addBook(7, "Aşk ve Gurur", "Jane Austen", 392, "images/aşk-ve-gurur.jpg");
+addBook(8, "Notre Dame'ın Kamburu", "Victor Hugo", 452, "images/notre-dome-kamburu.jpg");
+addBook(9, "Satranç", "Stefan Zweig", 192, "images/satranc.jpg");
+addBook(9, "Don Kişot", "Miguel de Cervantes", 922, "images/don-kisot.jpg");
 
 function createButtonsToSideBar(){
     sideBar.innerHTML = "";
