@@ -22,6 +22,21 @@ const books = [
     }
 ]
 
+function addBook(id, name, author, pageNumber, bookImage){
+    books.push({
+        id,
+        name,
+        author,
+        pageNumber,
+        bookImage
+    });
+
+    createButtonsToSideBar();
+}
+
+addBook(2, "Sefiller", "Victor Hugo", 1232, "images/sefiller.jpg");
+addBook(3, "1984", "George Orwell", 328, "images/1984.jpg");
+
 function createButtonsToSideBar(){
     sideBar.innerHTML = "";
 
@@ -58,6 +73,7 @@ function addBooksIngredientsToMain(book){
     const bookImage = document.createElement("img");
     bookImage.classList.add('book-image-section');
     bookImage.setAttribute('src' , book.bookImage);
+    bookImage.alt = book.name;
 
     section.append(bookName, bookAuthor, bookPageNumber, bookImage);
 }
