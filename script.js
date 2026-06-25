@@ -22,7 +22,6 @@ const books = [
     }
 ]
 
-
 function createButtonsToSideBar(){
     sideBar.innerHTML = "";
 
