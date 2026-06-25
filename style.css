@@ -49,7 +49,6 @@ header img{
     gap: 30px;
     width: 95%;
     height: 500px;
-    border: 2px solid #373737;
 }
 
 .sidebar{
@@ -60,6 +59,7 @@ header img{
     justify-content: center;
     gap: 8px;
     padding: 8px;
+    border: 2px solid #373737;
 }
 
 .side-buttons{
@@ -100,7 +100,7 @@ section{
 }
 
 .book-name-section{
-    font-size: 42px;
+    font-size: 80px;
 }
 
 .book-author-section{

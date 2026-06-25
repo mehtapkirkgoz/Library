@@ -17,7 +17,7 @@ const books = [
         id: 1,
         name: "Suç ve Ceza",
         author: "Dostoyevski",
-        pageNumber: 300,
+        pageNumber: 688,
         bookImage: 'images/suc-ve-ceza.jpg'
     }
 ]
