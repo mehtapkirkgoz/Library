@@ -3,6 +3,7 @@ const year = document.querySelector('.year');
 const sideBar = document.querySelector('.sidebar');
 const section = document.querySelector('.section-place');
 const title = document.querySelector(".main-title");
+const mainPlace = document.querySelector('.main-box');
 
 window.addEventListener("scroll", () => {
     if(window.scrollY > 50){
@@ -62,6 +63,12 @@ function showBookDetail(book){
     section.classList.remove("books-grid");
     section.classList.add("book-detail");
 
+    const backButton = document.createElement("button");
+    backButton.textContent = "← Back";
+    backButton.classList.add("back-button");
+
+    backButton.addEventListener("click", showBooksGrid)
+
     const bookName = document.createElement("p");
     bookName.classList.add('book-name-section');
     bookName.textContent = book.name;
@@ -79,6 +86,7 @@ function showBookDetail(book){
     bookImage.src = book.bookImage;
     bookImage.alt = book.name;
 
+    section.append(backButton);
     section.append(bookName, bookAuthor, bookPageNumber, bookImage);
 }
 
@@ -107,7 +115,7 @@ function showBooksGrid(){
         imageButton.append(image);
 
         imageButton.addEventListener("click", () => {
-            console.log(`${book.name} görseline tıklandı`);
+            showBookDetail(book);
         });
 
         section.append(imageButton);

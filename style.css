@@ -90,30 +90,44 @@ main{
     align-items: center;
 }
 
+.main-title{
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 40px;
+}
 
 .section-place{
-    width: 80%;
+    width: 100%;
     height: 100%;
 }
 
 .books-grid{
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    gap: 20px;
-}
-
-.main-title{
-    grid-column: 1 / -1;
-    text-align: center;
-    font-size: 50px;
+    gap: 10px;
+    overflow-y: auto;
 }
 
 .book-detail{
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 30px;
+}
+
+.back-button{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #1e4a2d;
+    color: #d5c9bc;
+    font-size: 20px;
+    width: 90px;
+    height: auto;
+    cursor: pointer;
+    border: none;
 }
 
 .book-image-button{
@@ -123,8 +137,8 @@ main{
 }
 
 .section-images{
-    width: 90%;
-    height: 150px;
+    width: 70%;
+    height: 160px;
     object-fit: cover;
     border-radius: 5px;
 }
