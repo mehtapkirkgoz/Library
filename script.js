@@ -2,7 +2,7 @@ const header = document.querySelector('.sliding-header');
 const year = document.querySelector('.year');
 const sideBar = document.querySelector('.sidebar');
 const section = document.querySelector('.section-place');
-const mainPlace = document.querySelector('.main-box');
+const title = document.querySelector(".main-title");
 
 window.addEventListener("scroll", () => {
     if(window.scrollY > 50){
@@ -88,6 +88,12 @@ function showBooksGrid(){
     section.classList.remove("book-detail");
     section.classList.add("books-grid");
 
+    const title = document.createElement("h1");
+    title.textContent = "MY LIBRARY";
+    title.classList.add("main-title");
+
+    section.append(title);
+
     books.forEach((book) => {
         const imageButton = document.createElement("button");
         imageButton.classList.add("book-image-button");
@@ -96,6 +102,7 @@ function showBooksGrid(){
         image.classList.add("section-images");
         image.src = book.bookImage;
         image.alt = book.name;
+        image.title = `${book.name} / ${book.author}`;
 
         imageButton.append(image);
 

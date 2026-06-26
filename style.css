@@ -85,20 +85,27 @@ main{
     width: 80%;
     height: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
+
 .section-place{
     width: 80%;
-    height: 90%;
+    height: 100%;
 }
 
 .books-grid{
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    gap: 30px;
-    align-items: center;
+    gap: 20px;
+}
+
+.main-title{
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 50px;
 }
 
 .book-detail{
