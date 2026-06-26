@@ -37,7 +37,7 @@ header img{
 }
 
 .scrolled-header{
-    transform: scale(1, 0.7);
+    transform: scale(1, 0.5);
     transition: transform 0.2s ease-in-out;
 }
 
@@ -140,6 +140,11 @@ main{
     width: 70%;
     height: 160px;
     object-fit: cover;
+    border-radius: 5px;
+}
+
+.section-images:hover{
+    width: 80%;
     border-radius: 5px;
 }
 
