@@ -4,6 +4,7 @@ const sideBar = document.querySelector('.sidebar');
 const section = document.querySelector('.section-place');
 const title = document.querySelector(".main-title");
 const mainPlace = document.querySelector('.main-box');
+const menuIconButton = document.querySelector('.menu-icon-btn');
 
 window.addEventListener("scroll", () => {
     if(window.scrollY > 50){
@@ -67,7 +68,10 @@ function showBookDetail(book){
     backButton.textContent = "← Back";
     backButton.classList.add("back-button");
 
-    backButton.addEventListener("click", showBooksGrid)
+    backButton.addEventListener("click",  () => {
+    title.classList.remove('hidden');
+    showBooksGrid();
+    })
 
     const bookName = document.createElement("p");
     bookName.classList.add('book-name-section');
@@ -98,12 +102,6 @@ function showBooksGrid(){
     section.classList.remove("book-detail");
     section.classList.add("books-grid-started");
 
-    const title = document.createElement("h1");
-    title.textContent = "LIBRARY";
-    title.classList.add("main-title");
-
-    section.append(title);
-
     books.forEach((book) => {
         const imageButton = document.createElement("button");
         imageButton.classList.add("book-image-button");
@@ -118,6 +116,7 @@ function showBooksGrid(){
 
         imageButton.addEventListener("click", () => {
             sideBar.classList.remove('hidden');
+            title.classList.add('hidden');
             mainPlace.classList.remove('main-started');
             section.classList.remove("books-grid-started");
             showBookDetail(book);
@@ -126,5 +125,12 @@ function showBooksGrid(){
         section.append(imageButton);
     });
 }
+
+menuIconButton.addEventListener("click", () =>{
+    sideBar.classList.toggle('hidden');
+    sideBar.classList.add('sidebar-button-active');
+    mainPlace.classList.add('main');
+    section.classList.toggle('books-grid');
+})
 
 year.textContent = new Date().getFullYear();
