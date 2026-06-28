@@ -90,6 +90,15 @@ main{
     align-items: center;
 }
 
+.main-started{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .main-title{
     grid-column: 1 / -1;
     text-align: center;
@@ -99,6 +108,13 @@ main{
 .section-place{
     width: 100%;
     height: 100%;
+}
+
+.books-grid-started{
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 10px;
+    overflow-y: auto;
 }
 
 .books-grid{
@@ -121,7 +137,7 @@ main{
     position: absolute;
     top: 10px;
     left: 10px;
-    background-color: #1e4a2d;
+    background-color: #6a6a6a;
     color: #d5c9bc;
     font-size: 20px;
     width: 90px;
