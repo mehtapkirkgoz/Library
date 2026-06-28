@@ -92,12 +92,14 @@ function showBookDetail(book){
 
 function showBooksGrid(){
     section.innerHTML = "";
+    sideBar.classList.add('hidden');
 
+    mainPlace.classList.add('main-started');
     section.classList.remove("book-detail");
-    section.classList.add("books-grid");
+    section.classList.add("books-grid-started");
 
     const title = document.createElement("h1");
-    title.textContent = "MY LIBRARY";
+    title.textContent = "LIBRARY";
     title.classList.add("main-title");
 
     section.append(title);
@@ -115,6 +117,9 @@ function showBooksGrid(){
         imageButton.append(image);
 
         imageButton.addEventListener("click", () => {
+            sideBar.classList.remove('hidden');
+            mainPlace.classList.remove('main-started');
+            section.classList.remove("books-grid-started");
             showBookDetail(book);
         });
 
