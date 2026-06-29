@@ -42,31 +42,36 @@ header img{
 }
 
 .page-container{
-    margin: 30px 40px 30px;
+    margin: 0 40px 30px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 30px;
+    align-items: flex-start;
     width: 95%;
     height: 500px;
+    position: relative;
 }
 
-.sidebar, .sidebar-button-active{
-    width: 25%;
+.sidebar{
+    width: 0;
+    min-width: 0;
     height: 100%;
     background-color: #6a6a6a;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 0.75rem;
-    padding: 0.75rem;
-    border: 2px solid #373737;
+    padding: 0;
+    border: none;
     max-height: 560px;
-    overflow-y: auto;
+    overflow: hidden;
+    
+    transition: width 0.2s ease-in-out, padding 0.2s ease-in-out;
 }
 
-.sidebar-button-active{
-    top: 50px;
+.sidebar-active{
+    width: 25%;
+    padding: 0.75rem;
+    border: 1px solid #373737;
+    overflow-y: auto;
 }
 
 .side-buttons{
@@ -85,13 +90,14 @@ header img{
     background-color: #d5c9bc;
 }
 
-main{
-    width: 80%;
+.main-box{
+    width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    transition: width 0.3s ease-in-out;
 }
 
 .main-started{
@@ -105,9 +111,13 @@ main{
 
 .menu-icon img{
     margin-left: 40px;
-    margin-top: 40px;
+    margin-top: 20px;
     width: 30px;
     height: 34px;
+}
+
+.menu-icon img:hover{
+    transform: scale(1.20);
 }
 
 button{

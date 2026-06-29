@@ -17,14 +17,7 @@ window.addEventListener("scroll", () => {
 const books = [];
 
 function addBook(id, name, author, pageNumber, bookImage){
-    books.push({
-        id,
-        name,
-        author,
-        pageNumber,
-        bookImage
-    });
-
+    books.push({ id, name, author, pageNumber, bookImage });
     createButtonsToSideBar();
     showBooksGrid();
 }
@@ -36,42 +29,37 @@ addBook(4, "Dönüşüm", "Franz Kafka", 104, "images/dönüşüm.jpg");
 addBook(5, "Anna Karenina", "Lev Tolstoy", 953, "images/anna-karenina.jpg");
 addBook(6, "Madame Bovary", "Gustave Flaubert", 376, "images/madame-bovary.jpg");
 addBook(7, "Aşk ve Gurur", "Jane Austen", 392, "images/aşk-ve-gurur.jpg");
-addBook(8, "Notre Dame'ın Kamburu", "Victor Hugo", 452, "images/notre-dome-kamburu.jpg");
+addBook(8, "Notre Dame'Ä±n Kamburu", "Victor Hugo", 452, "images/notre-dome-kamburu.jpg");
 addBook(9, "Satranç", "Stefan Zweig", 192, "images/satranc.jpg");
 addBook(10, "Don Kişot", "Miguel de Cervantes", 922, "images/don-kisot.jpg");
 
 function createButtonsToSideBar(){
     sideBar.innerHTML = "";
-
     books.forEach((book) => {
         const newButton = document.createElement("button");
-
         newButton.textContent = book.name;
         newButton.id = book.id;
         newButton.classList.add("side-buttons");
-
         newButton.addEventListener("click", () => {
             showBookDetail(book);
         });
-
         sideBar.append(newButton);
     });
 }
 
 function showBookDetail(book){
     section.innerHTML = "";
-
+    title.classList.add('hidden');
     section.classList.remove("books-grid");
     section.classList.add("book-detail");
 
     const backButton = document.createElement("button");
-    backButton.textContent = "← Back";
+    backButton.textContent = "â† Back";
     backButton.classList.add("back-button");
-
-    backButton.addEventListener("click",  () => {
-    title.classList.remove('hidden');
-    showBooksGrid();
-    })
+    backButton.addEventListener("click", () => {
+        title.classList.remove('hidden');
+        showBooksGrid();
+    });
 
     const bookName = document.createElement("p");
     bookName.classList.add('book-name-section');
@@ -90,13 +78,14 @@ function showBookDetail(book){
     bookImage.src = book.bookImage;
     bookImage.alt = book.name;
 
-    section.append(backButton);
-    section.append(bookName, bookAuthor, bookPageNumber, bookImage);
+    section.append(backButton, bookName, bookAuthor, bookPageNumber, bookImage);
 }
 
 function showBooksGrid(){
     section.innerHTML = "";
-    sideBar.classList.add('hidden');
+
+    sideBar.classList.remove('sidebar-active');
+    mainPlace.classList.remove('maibox');
 
     mainPlace.classList.add('main-started');
     section.classList.remove("book-detail");
@@ -115,7 +104,8 @@ function showBooksGrid(){
         imageButton.append(image);
 
         imageButton.addEventListener("click", () => {
-            sideBar.classList.remove('hidden');
+            sideBar.classList.add('sidebar-active');
+            mainPlace.classList.add('main-box');
             title.classList.add('hidden');
             mainPlace.classList.remove('main-started');
             section.classList.remove("books-grid-started");
@@ -126,11 +116,10 @@ function showBooksGrid(){
     });
 }
 
-menuIconButton.addEventListener("click", () =>{
-    sideBar.classList.toggle('hidden');
-    sideBar.classList.add('sidebar-button-active');
-    mainPlace.classList.add('main');
+menuIconButton.addEventListener("click", () => {
+    const isActive = sideBar.classList.toggle('sidebar-active');
+    mainPlace.classList.toggle('main-box', isActive);
     section.classList.toggle('books-grid');
-})
+});
 
 year.textContent = new Date().getFullYear();
